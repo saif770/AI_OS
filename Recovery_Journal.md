@@ -2,6 +2,108 @@
 
 ---
 
+# Execution Engine Recovery Iteration 1 — Restore generated.py Output
+
+## Problem
+
+The Execution Engine integration test
+(`tests/integration/test_execution_engine.py`) failed because `generated.py`
+was not created at the expected location (`tmp_path / "generated.py"`).
+
+A previous hypothesis had anchored the suspicion on `patch_applier.py`. This
+iteration re-investigated the issue evidence-first, tracing the full
+execution path through the knowledge graph and source code rather than
+relying on that prior assumption.
+
+## Root Cause
+
+Evidence-based trace of the execution pipeline:
+
+```
+ExecutionEngine.execute()
+  -> CodeGenerator.generate(response, filename="generated.py")
+       returns GeneratedCode(filename="generated.py", source=...)   # no disk write
+  -> PatchGenerator.generate(generated)
+       returns CodePatch(target_file="generated.py", updated=...)   # no disk write
+  -> PatchApplier.apply_many(bundle.patches)
+       apply(): target = Path(patch.target_file)  # "generated.py" (RELATIVE)
+               target.write_text(...)             # writes to CWD, NOT project_root
+```
+
+The fault spans the engine↔applier boundary, not the applier in isolation:
+
+- `ReportWriter` (the sibling writer) was correctly anchored: constructed as
+  `ReportWriter(self.project_root / "output")`, so its output landed at
+  `tmp_path/output/execution_report.json` (test assertion passed).
+- `PatchApplier` was constructed as `PatchApplier()` with **no `project_root`**.
+  Its `apply()` resolved the relative `target_file` against the process
+  current working directory, so `generated.py` was written to the repository
+  root (CWD) instead of `tmp_path`.
+
+Confirmation: the repository-root `generated.py` contained exactly
+`print("AI_OS Execution Engine")` — the precise content the test's
+`MockLLMClient` returns — proving it was a CWD-write artifact of the bug.
+
+The unit tests for `PatchApplier` only ever exercised absolute paths
+(`tmp_path / "hello.py"`), so they never caught the relative-path
+regression.
+
+## Fix
+
+Minimal, API-preserving fix anchoring generated output to `project_root`:
+
+- Added an optional `project_root: Path | None = None` field to `PatchApplier`.
+  When set and the patch `target_file` is relative, the target is resolved
+  against `project_root`; absolute targets pass through unchanged (preserving
+  existing unit-test behavior).
+- Wired `project_root` in `ExecutionEngine.__init__`:
+  `PatchApplier(project_root=self.project_root)`.
+
+No public API changed (additive optional field; existing `PatchApplier()`
+callers and absolute-path callers behave identically).
+
+## Tests
+
+### Passed
+
+```text
+python -m compileall core tests
+
+✅ Passed
+
+pytest tests/unit/execution_engine/test_patch_applier.py \
+       tests/unit/execution_engine/test_engine.py -v
+
+✅ 4 passed
+
+pytest tests/integration/test_execution_engine.py -x -vv
+
+✅ 1 passed
+
+generated.py is now created at tmp_path / "generated.py" (assertion
+passes) alongside output/execution_report.json.
+```
+
+## Remaining Issues
+
+- A stale, git-tracked `generated.py` remains at the repository root — a
+  leftover artifact of the pre-fix CWD-write behavior. Not removed this
+  iteration to respect the minimal-fix and file-budget constraints; tracked
+  as TD-003.
+- TD-001 (MCP graph inconsistency) and TD-002 (docs layout) carried forward.
+
+## Confidence
+
+High
+
+The root cause was identified by tracing the actual execution path and
+confirming the symptom with the on-disk artifact, rather than anchoring on
+the earlier hypothesis. Although the fix touches `patch_applier.py`, the
+evidence — not the prior suspicion — drove the conclusion, and the actual
+fault was the missing `project_root` wiring at the engine↔applier boundary.
+
+---
+
 # Iteration 3 — Verification Engine ToolRunner Adoption Completion
 
 ## Problem

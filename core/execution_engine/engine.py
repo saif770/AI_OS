@@ -50,7 +50,9 @@ class ExecutionEngine:
         self.prompt_builder = PromptBuilder()
         self.generator = CodeGenerator()
         self.patch_generator = PatchGenerator()
-        self.patch_applier = PatchApplier()
+        self.patch_applier = PatchApplier(
+            project_root=self.project_root
+        )
         self.validator = Validator()
         self.report_writer = ReportWriter(
             self.project_root / "output"
