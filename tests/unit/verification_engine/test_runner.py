@@ -1,49 +1,52 @@
 """
-Pytest verification step.
+Unit tests for the Verification Engine pytest runner.
 """
 
-from __future__ import annotations
-
-from dataclasses import dataclass
 from pathlib import Path
-import subprocess
-import time
 
-from .models import VerificationCheck
+from core.verification_engine import pytest_runner
+from core.verification_engine.models import VerificationCheck
+from core.verification_engine.tool_runner import ToolRunner
 
 
-@dataclass(slots=True)
-class TestRunner:
-    """Runs the project's pytest suite."""
+def test_test_runner_delegates_to_tool_runner(
+    tmp_path: Path,
+    monkeypatch,
+):
+    project = tmp_path / "project"
+    project.mkdir()
 
-    pytest_args: tuple[str, ...] = ("-q",)
+    captured: dict[str, object] = {}
 
-    def run(self, project_root: Path) -> VerificationCheck:
-        start = time.perf_counter()
-
-        cmd = ["pytest", *self.pytest_args]
-
-        result = subprocess.run(
-            cmd,
-            cwd=project_root,
-            capture_output=True,
-            text=True,
-        )
-
-        duration = time.perf_counter() - start
-
-        success = result.returncode == 0
-
-        message = "All tests passed." if success else "Tests failed."
+    def fake_run(
+        self,
+        *,
+        name: str,
+        project_root: Path,
+        command: list[str],
+        module_fallback: str | None = None,
+    ) -> VerificationCheck:
+        captured["name"] = name
+        captured["project_root"] = project_root
+        captured["command"] = command
+        captured["module_fallback"] = module_fallback
 
         return VerificationCheck(
-            name="test_runner",
-            success=success,
-            duration=duration,
-            message=message,
-            details={
-                "returncode": result.returncode,
-                "stdout": result.stdout,
-                "stderr": result.stderr,
-            },
+            name=name,
+            success=True,
+            duration=0.01,
+            message="Passed.",
+            details={"command": command},
         )
+
+    monkeypatch.setattr(ToolRunner, "run", fake_run)
+
+    result = pytest_runner.TestRunner().run(project)
+
+    assert captured == {
+        "name": "test_runner",
+        "project_root": project,
+        "command": ["pytest", "-q"],
+        "module_fallback": "pytest",
+    }
+    assert result.success

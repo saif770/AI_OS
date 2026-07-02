@@ -4,12 +4,11 @@ Pytest verification step.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
-import subprocess
-import time
 
 from .models import VerificationCheck
+from .tool_runner import ToolRunner
 
 
 @dataclass(slots=True)
@@ -17,33 +16,12 @@ class TestRunner:
     """Runs the project's pytest suite."""
 
     pytest_args: tuple[str, ...] = ("-q",)
+    tool_runner: ToolRunner = field(default_factory=ToolRunner)
 
     def run(self, project_root: Path) -> VerificationCheck:
-        start = time.perf_counter()
-
-        cmd = ["pytest", *self.pytest_args]
-
-        result = subprocess.run(
-            cmd,
-            cwd=project_root,
-            capture_output=True,
-            text=True,
-        )
-
-        duration = time.perf_counter() - start
-
-        success = result.returncode == 0
-
-        message = "All tests passed." if success else "Tests failed."
-
-        return VerificationCheck(
+        return self.tool_runner.run(
             name="test_runner",
-            success=success,
-            duration=duration,
-            message=message,
-            details={
-                "returncode": result.returncode,
-                "stdout": result.stdout,
-                "stderr": result.stderr,
-            },
+            project_root=project_root,
+            command=["pytest", *self.pytest_args],
+            module_fallback="pytest",
         )

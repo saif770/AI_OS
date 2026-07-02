@@ -16,7 +16,7 @@ from .linter import Linter
 from .models import VerificationCheck, VerificationReport
 from .report import ReportWriter
 from .security import SecurityScanner
-from .test_runner import TestRunner
+from .pytest_runner import TestRunner
 
 
 class VerificationEngine:
