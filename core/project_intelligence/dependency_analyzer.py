@@ -1,4 +1,4 @@
-"""
+﻿"""
 dependency_analyzer.py
 
 Analyze project dependencies from supported package managers.
@@ -208,3 +208,4 @@ class DependencyAnalyzer:
                 packages.append(line)
 
         return packages
+

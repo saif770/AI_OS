@@ -1,4 +1,4 @@
-"""
+﻿"""
 End-to-end integration test for AI_OS.
 """
 
@@ -45,3 +45,4 @@ def test_ai_os_end_to_end():
 
     for report in reports.values():
         assert Path(report).exists()
+

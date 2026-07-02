@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/environment.py
 
 Environment preparation stage.
@@ -68,3 +68,4 @@ class EnvironmentStage(BootstrapStage):
         )
 
         return result
+

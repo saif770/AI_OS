@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/context.py
 
 Shared runtime context for the Bootstrap Engine.
@@ -137,3 +137,4 @@ class BootstrapContext:
             "failed": sum(r.failed for r in self.results),
             "shared_data": len(self.data),
         }
+

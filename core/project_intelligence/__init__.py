@@ -1,4 +1,4 @@
-"""
+﻿"""
 Project Intelligence package.
 """
 
@@ -14,3 +14,4 @@ def __getattr__(name):
         from .analyzer import ProjectAnalyzer
         return ProjectAnalyzer
     raise AttributeError(name)
+

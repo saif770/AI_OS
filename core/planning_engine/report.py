@@ -1,4 +1,4 @@
-"""
+﻿"""
 report.py
 
 Generate planning reports.
@@ -163,3 +163,5 @@ class PlanningReport:
             "\n".join(lines),
             encoding="utf-8",
         )
+
+

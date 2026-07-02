@@ -1,4 +1,4 @@
-"""
+﻿"""
 report.py
 
 Generate Project Intelligence reports.
@@ -7,7 +7,7 @@ Generate Project Intelligence reports.
 from __future__ import annotations
 
 import json
-from datetime import datetime
+from datetime import datetime, UTC, UTC
 from pathlib import Path
 
 
@@ -141,3 +141,4 @@ class ProjectReport:
                 / "PROJECT_CONTEXT.md"
             ),
         }
+

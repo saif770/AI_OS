@@ -1,4 +1,4 @@
-"""
+﻿"""
 task.py
 
 Task utilities for the Planning Engine.
@@ -55,3 +55,5 @@ def add_tag(task: Task, tag: str) -> None:
 
 def to_dict(task: Task) -> dict:
     return asdict(task)
+
+

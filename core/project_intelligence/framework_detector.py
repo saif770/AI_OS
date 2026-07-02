@@ -1,4 +1,4 @@
-"""
+﻿"""
 framework_detector.py
 
 Detect frameworks used by the project.
@@ -186,3 +186,4 @@ class FrameworkDetector:
                 )
 
         return detected
+

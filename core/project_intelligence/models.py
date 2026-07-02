@@ -1,4 +1,4 @@
-"""
+﻿"""
 models.py
 
 Shared data models for the Project Intelligence Engine.
@@ -115,3 +115,4 @@ class ProjectReport:
     mcp: MCPInfo
 
     metadata: dict[str, Any] = field(default_factory=dict)
+

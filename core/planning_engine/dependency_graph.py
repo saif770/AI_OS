@@ -1,4 +1,4 @@
-"""
+﻿"""
 dependency_graph.py
 
 Task dependency graph for the Planning Engine.
@@ -78,3 +78,5 @@ class DependencyGraph:
             return False
         except ValueError:
             return True
+
+

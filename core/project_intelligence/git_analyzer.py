@@ -1,4 +1,4 @@
-"""
+﻿"""
 git_analyzer.py
 
 Analyze Git repository information.
@@ -130,3 +130,4 @@ class GitAnalyzer:
         except Exception:
 
             return None
+

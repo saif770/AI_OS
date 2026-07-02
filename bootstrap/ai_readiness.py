@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/ai_readiness.py
 
 AI readiness analysis stage.
@@ -160,3 +160,4 @@ class AIReadinessStage(BootstrapStage):
         )
 
         return result
+

@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/project_scan.py
 
 Project scanning and inventory stage.
@@ -114,3 +114,4 @@ class ProjectScanStage(BootstrapStage):
         )
 
         return result
+

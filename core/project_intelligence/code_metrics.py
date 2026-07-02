@@ -1,4 +1,4 @@
-"""
+﻿"""
 code_metrics.py
 
 Collect source code metrics for a project.
@@ -150,3 +150,4 @@ class CodeMetrics:
         )
 
         return metrics
+

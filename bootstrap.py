@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap.py
 
 Command-line entry point for the AI Operating System Bootstrap Engine.
@@ -46,3 +46,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

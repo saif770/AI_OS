@@ -1,4 +1,4 @@
-"""
+﻿"""
 architecture.py
 
 Detect the project's architectural style.
@@ -123,3 +123,4 @@ class ArchitectureDetector:
                 count += 1
 
         return count == 1
+

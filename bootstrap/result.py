@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/result.py
 
 Standard result object returned by every bootstrap stage.
@@ -7,7 +7,7 @@ Standard result object returned by every bootstrap stage.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, UTC, UTC
 from typing import Any
 
 
@@ -96,3 +96,4 @@ class BootstrapResult:
             f"{self.status} | "
             f"{self.duration:.3f}s"
         )
+

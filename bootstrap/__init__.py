@@ -1,4 +1,4 @@
-"""
+﻿"""
 AI Operating System Bootstrap Framework.
 
 This package exposes the reusable Bootstrap API.
@@ -22,3 +22,4 @@ __all__ = [
     "StageRegistry",
     "BootstrapResult",
 ]
+

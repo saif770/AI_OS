@@ -1,4 +1,4 @@
-"""
+﻿"""
 risk_analyzer.py
 
 Analyze planning risks before execution.
@@ -120,3 +120,5 @@ class RiskAnalyzer:
                 ),
             )
         ]
+
+

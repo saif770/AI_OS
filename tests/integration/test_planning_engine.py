@@ -1,4 +1,4 @@
-"""
+﻿"""
 Integration test for the Planning Engine.
 """
 
@@ -44,3 +44,5 @@ def test_planning_engine_runs():
     assert "plan" in reports
     assert "roadmap" in reports
     assert "risks" in reports
+
+

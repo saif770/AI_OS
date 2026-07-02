@@ -1,4 +1,4 @@
-"""
+﻿"""
 mcp_bridge.py
 
 Bridge between the AI Operating System and MCP servers.
@@ -156,3 +156,4 @@ class MCPBridge:
         except Exception:
 
             return None
+

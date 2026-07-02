@@ -1,4 +1,4 @@
-"""
+﻿"""
 models.py
 
 Shared planning models.
@@ -61,3 +61,5 @@ class PlanningResult:
     project_name: str
     roadmap: Roadmap
     metadata: dict[str, Any] = field(default_factory=dict)
+
+

@@ -1,6 +1,6 @@
 # Project Intelligence Report
 
-Generated: 2026-07-02T15:45:25.215721
+Generated: 2026-07-02T17:49:15.893491
 
 ## Project
 
@@ -10,9 +10,9 @@ Generated: 2026-07-02T15:45:25.215721
 ## Language
 
 - **primary_language**: Python
-- **total_source_files**: 50
-- **languages**: {'Markdown': 1, 'Python': 49}
-- **percentages**: {'Markdown': 2.0, 'Python': 98.0}
+- **total_source_files**: 100
+- **languages**: {'Markdown': 1, 'Python': 99}
+- **percentages**: {'Markdown': 1.0, 'Python': 99.0}
 
 ## Framework
 
@@ -36,21 +36,21 @@ Generated: 2026-07-02T15:45:25.215721
 
 ## Metrics
 
-- **directories**: 10
-- **files**: 55
-- **python_files**: 49
-- **lines_of_code**: 4603
-- **blank_lines**: 1428
+- **directories**: 15
+- **files**: 105
+- **python_files**: 99
+- **lines_of_code**: 7033
+- **blank_lines**: 2127
 - **comment_lines**: 152
-- **classes**: 47
-- **functions**: 140
-- **imports**: 191
-- **test_files**: 6
+- **classes**: 83
+- **functions**: 231
+- **imports**: 379
+- **test_files**: 31
 - **documentation_files**: 1
 - **largest_file**: core\project_intelligence\dependency_analyzer.py
-- **largest_file_lines**: 210
-- **total_size_bytes**: 102703
-- **code_lines**: 3023
+- **largest_file_lines**: 211
+- **total_size_bytes**: 154482
+- **code_lines**: 4754
 
 ## Git
 
@@ -58,11 +58,11 @@ Generated: 2026-07-02T15:45:25.215721
 - **repository**: True
 - **branch**: main
 - **remote**: https://github.com/saif770/AI_OS.git
-- **latest_commit**: Planning Engine v1 completed
-- **latest_commit_hash**: 39f4ee018ab3a657ec469456386a26f3c3fedc4b
-- **commit_count**: 2
-- **tags**: ['v0.1.0', 'v0.2.0']
-- **status**: ['M .bootstrap/PROJECT_CONTEXT.md', ' M .bootstrap/PROJECT_OVERVIEW.json', ' M .bootstrap/report.json', ' M bootstrap.py', ' M bootstrap/__init__.py', ' M bootstrap/__pycache__/__init__.cpython-313.pyc', ' D tests', '?? .bootstrap/PLAN.md', '?? .bootstrap/RISKS.md', '?? .bootstrap/ROADMAP.md', '?? .bootstrap/TASKS.json', '?? __pycache__/', '?? bootstrap/__pycache__/engine.cpython-313.pyc', '?? bootstrap/engine.py', '?? core/__init__.py', '?? core/__pycache__/', '?? test_planning.py']
+- **latest_commit**: Refactor bootstrap architecture and complete Planning Engine integration
+- **latest_commit_hash**: 9bdc3a999014d8454cbc80c7210e76ededde09fe
+- **commit_count**: 3
+- **tags**: ['v0.1.0', 'v0.2.0', 'v0.3.0']
+- **status**: ['M .bootstrap/PROJECT_CONTEXT.md', ' M .bootstrap/PROJECT_OVERVIEW.json', ' M .bootstrap/report.json', ' M bootstrap.py', ' M bootstrap/__init__.py', ' M bootstrap/__pycache__/__init__.cpython-313.pyc', ' M bootstrap/__pycache__/ai_readiness.cpython-313.pyc', ' M bootstrap/__pycache__/base.cpython-313.pyc', ' M bootstrap/__pycache__/config.cpython-313.pyc', ' M bootstrap/__pycache__/context.cpython-313.pyc', ' M bootstrap/__pycache__/dependencies.cpython-313.pyc', ' M bootstrap/__pycache__/engine.cpython-313.pyc', ' M bootstrap/__pycache__/environment.cpython-313.pyc', ' M bootstrap/__pycache__/git_setup.cpython-313.pyc', ' M bootstrap/__pycache__/mcp_setup.cpython-313.pyc', ' M bootstrap/__pycache__/project_scan.cpython-313.pyc', ' M bootstrap/__pycache__/registry.cpython-313.pyc', ' M bootstrap/__pycache__/report.cpython-313.pyc', ' M bootstrap/__pycache__/result.cpython-313.pyc', ' M bootstrap/__pycache__/structure.cpython-313.pyc', ' M bootstrap/__pycache__/verification.cpython-313.pyc', ' M bootstrap/ai_readiness.py', ' M bootstrap/base.py', ' M bootstrap/config.py', ' M bootstrap/context.py', ' M bootstrap/dependencies.py', ' M bootstrap/engine.py', ' M bootstrap/environment.py', ' M bootstrap/git_setup.py', ' M bootstrap/mcp_setup.py', ' M bootstrap/project_scan.py', ' M bootstrap/registry.py', ' M bootstrap/report.py', ' M bootstrap/result.py', ' M bootstrap/structure.py', ' M bootstrap/verification.py', ' M bootstrap_init.py', ' M core/__init__.py', ' M core/__pycache__/__init__.cpython-313.pyc', ' M core/planning_engine/__init__.py', ' M core/planning_engine/__pycache__/__init__.cpython-313.pyc', ' M core/planning_engine/__pycache__/dependency_graph.cpython-313.pyc', ' M core/planning_engine/__pycache__/engine.cpython-313.pyc', ' M core/planning_engine/__pycache__/models.cpython-313.pyc', ' M core/planning_engine/__pycache__/planner.cpython-313.pyc', ' M core/planning_engine/__pycache__/prioritizer.cpython-313.pyc', ' M core/planning_engine/__pycache__/report.cpython-313.pyc', ' M core/planning_engine/__pycache__/risk_analyzer.cpython-313.pyc', ' M core/planning_engine/__pycache__/roadmap.cpython-313.pyc', ' M core/planning_engine/__pycache__/task.cpython-313.pyc', ' M core/planning_engine/__pycache__/work_breakdown.cpython-313.pyc', ' M core/planning_engine/dependency_graph.py', ' M core/planning_engine/engine.py', ' M core/planning_engine/models.py', ' M core/planning_engine/planner.py', ' M core/planning_engine/prioritizer.py', ' M core/planning_engine/report.py', ' M core/planning_engine/risk_analyzer.py', ' M core/planning_engine/roadmap.py', ' M core/planning_engine/task.py', ' M core/planning_engine/work_breakdown.py', ' M core/project_intelligence/__init__.py', ' M core/project_intelligence/__pycache__/__init__.cpython-313.pyc', ' M core/project_intelligence/__pycache__/analyzer.cpython-313.pyc', ' M core/project_intelligence/__pycache__/architecture.cpython-313.pyc', ' M core/project_intelligence/__pycache__/code_metrics.cpython-313.pyc', ' M core/project_intelligence/__pycache__/dependency_analyzer.cpython-313.pyc', ' M core/project_intelligence/__pycache__/entrypoint_detector.cpython-313.pyc', ' M core/project_intelligence/__pycache__/framework_detector.cpython-313.pyc', ' M core/project_intelligence/__pycache__/git_analyzer.cpython-313.pyc', ' M core/project_intelligence/__pycache__/language_detector.cpython-313.pyc', ' M core/project_intelligence/__pycache__/mcp_bridge.cpython-313.pyc', ' M core/project_intelligence/__pycache__/models.cpython-313.pyc', ' M core/project_intelligence/__pycache__/report.cpython-313.pyc', ' M core/project_intelligence/analyzer.py', ' M core/project_intelligence/architecture.py', ' M core/project_intelligence/code_metrics.py', ' M core/project_intelligence/dependency_analyzer.py', ' M core/project_intelligence/entrypoint_detector.py', ' M core/project_intelligence/framework_detector.py', ' M core/project_intelligence/git_analyzer.py', ' M core/project_intelligence/language_detector.py', ' M core/project_intelligence/mcp_bridge.py', ' M core/project_intelligence/models.py', ' M core/project_intelligence/report.py', ' M test_planning.py', ' M tests/integration/__init__.py', ' M tests/integration/__pycache__/__init__.cpython-313.pyc', ' M tests/integration/__pycache__/conftest.cpython-313-pytest-9.1.0.pyc', ' M tests/integration/__pycache__/conftest.cpython-313.pyc', ' M tests/integration/__pycache__/test_bootstrap.cpython-313-pytest-9.1.0.pyc', ' M tests/integration/__pycache__/test_bootstrap.cpython-313.pyc', ' M tests/integration/__pycache__/test_end_to_end.cpython-313-pytest-9.1.0.pyc', ' M tests/integration/__pycache__/test_end_to_end.cpython-313.pyc', ' M tests/integration/__pycache__/test_planning_engine.cpython-313-pytest-9.1.0.pyc', ' M tests/integration/__pycache__/test_planning_engine.cpython-313.pyc', ' M tests/integration/__pycache__/test_project_intelligence.cpython-313-pytest-9.1.0.pyc', ' M tests/integration/__pycache__/test_project_intelligence.cpython-313.pyc', ' M tests/integration/conftest.py', ' M tests/integration/test_bootstrap.py', ' M tests/integration/test_end_to_end.py', ' M tests/integration/test_planning_engine.py', ' M tests/integration/test_project_intelligence.py', '?? __pycache__/test_planning.cpython-313-pytest-9.1.0.pyc', '?? core/execution_engine/', '?? core/verification_engine/', '?? generated.py', '?? tests/integration/__pycache__/test_execution_engine.cpython-313-pytest-9.1.0.pyc', '?? tests/integration/__pycache__/test_execution_engine.cpython-313.pyc', '?? tests/integration/__pycache__/test_verification_engine.cpython-313-pytest-9.1.0.pyc', '?? tests/integration/__pycache__/test_verification_engine.cpython-313.pyc', '?? tests/integration/test_execution_engine.py', '?? tests/integration/test_verification_engine.py', '?? tests/unit/']
 
 ## Architecture
 

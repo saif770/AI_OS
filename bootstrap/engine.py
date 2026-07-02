@@ -1,4 +1,4 @@
-"""
+﻿"""
 engine.py
 
 Reusable Bootstrap Engine.
@@ -79,3 +79,4 @@ class BootstrapEngine:
         from pathlib import Path
 
         return Path(__file__).resolve().parent.parent
+

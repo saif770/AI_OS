@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/registry.py
 
 Stage registry and execution engine.
@@ -113,3 +113,4 @@ class StageRegistry:
         return (
             f"<StageRegistry stages={len(self._stages)}>"
         )
+

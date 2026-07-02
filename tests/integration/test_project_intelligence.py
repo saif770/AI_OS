@@ -1,4 +1,4 @@
-"""
+﻿"""
 Integration test for Project Intelligence.
 """
 
@@ -26,3 +26,5 @@ def test_project_intelligence_runs():
     assert report["project"]["name"] == project_root.name
 
     assert report["metrics"]["python_files"] >= 0
+
+

@@ -1,4 +1,4 @@
-"""
+﻿"""
 Integration test for the Bootstrap Framework.
 """
 
@@ -23,3 +23,4 @@ def test_bootstrap_engine_runs():
     assert summary["failed"] == 0
 
     assert engine.summary == summary
+

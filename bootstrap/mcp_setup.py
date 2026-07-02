@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/mcp_setup.py
 
 MCP discovery and configuration stage.
@@ -87,3 +87,4 @@ class MCPSetupStage(BootstrapStage):
         )
 
         return result
+

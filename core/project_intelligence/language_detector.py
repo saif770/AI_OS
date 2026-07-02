@@ -1,4 +1,4 @@
-"""
+﻿"""
 language_detector.py
 
 Detect programming languages used in a project.
@@ -115,3 +115,4 @@ class LanguageDetector:
             "languages": dict(counts),
             "percentages": percentages,
         }
+

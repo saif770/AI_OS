@@ -1,4 +1,4 @@
-"""
+﻿"""
 analyzer.py
 
 Main Project Intelligence Engine.
@@ -145,3 +145,4 @@ if __name__ == "__main__":
     ProjectAnalyzer(
         Path.cwd()
     ).summary()
+

@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/verification.py
 
 Final project verification stage.
@@ -117,3 +117,4 @@ class VerificationStage(BootstrapStage):
         )
 
         return result
+

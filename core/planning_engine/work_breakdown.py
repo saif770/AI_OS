@@ -1,4 +1,4 @@
-"""
+﻿"""
 work_breakdown.py
 
 Break large planning tasks into smaller subtasks.
@@ -84,3 +84,5 @@ class WorkBreakdown:
             sum(task.estimated_hours for task in tasks),
             2,
         )
+
+

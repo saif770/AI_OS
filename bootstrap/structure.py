@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/structure.py
 
 Project structure verification stage.
@@ -111,3 +111,4 @@ class StructureStage(BootstrapStage):
         )
 
         return result
+

@@ -1,4 +1,4 @@
-from pathlib import Path
+﻿from pathlib import Path
 
 from core.project_intelligence.analyzer import ProjectAnalyzer
 from core.planning_engine.engine import PlanningEngine
@@ -25,3 +25,4 @@ planning = engine.run(
 engine.summary(planning)
 
 print("\nPASS")
+

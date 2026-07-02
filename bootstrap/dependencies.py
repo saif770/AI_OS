@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/dependencies.py
 
 Dependency installation and verification stage.
@@ -87,3 +87,4 @@ class DependencyStage(BootstrapStage):
         )
 
         return result
+

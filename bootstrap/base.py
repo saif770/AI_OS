@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/base.py
 
 Base class for every Bootstrap stage.
@@ -111,3 +111,4 @@ class BootstrapStage(ABC):
             f" order={self.order}"
             f">"
         )
+

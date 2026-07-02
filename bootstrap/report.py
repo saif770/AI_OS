@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/report.py
 
 Generate the final bootstrap report.
@@ -7,7 +7,7 @@ Generate the final bootstrap report.
 from __future__ import annotations
 
 import json
-from datetime import datetime
+from datetime import datetime, UTC, UTC
 from pathlib import Path
 
 from .base import BootstrapStage
@@ -106,3 +106,4 @@ class ReportStage(BootstrapStage):
         )
 
         return result
+

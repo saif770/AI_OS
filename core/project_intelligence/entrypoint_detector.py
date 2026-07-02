@@ -1,4 +1,4 @@
-"""
+﻿"""
 entrypoint_detector.py
 
 Detect project entry points.
@@ -107,3 +107,4 @@ class EntrypointDetector:
             "entrypoints": sorted(entrypoints),
             "count": len(entrypoints),
         }
+

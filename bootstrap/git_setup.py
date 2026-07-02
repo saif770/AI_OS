@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/git_setup.py
 
 Git initialization and verification stage.
@@ -130,3 +130,4 @@ class GitSetupStage(BootstrapStage):
         )
 
         return result
+

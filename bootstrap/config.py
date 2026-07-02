@@ -1,4 +1,4 @@
-"""
+﻿"""
 bootstrap/config.py
 
 Bootstrap configuration.
@@ -144,3 +144,4 @@ class BootstrapConfig:
             f"project='{self.project_name}' "
             f"version='{self.version}'>"
         )
+

@@ -1,4 +1,4 @@
-"""
+﻿"""
 Shared pytest fixtures for AI_OS integration tests.
 """
 
@@ -88,3 +88,4 @@ def planning_result(
         project_name=project_root.name,
         intelligence=project_intelligence,
     )
+
