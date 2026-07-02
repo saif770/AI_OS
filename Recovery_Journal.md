@@ -2,6 +2,85 @@
 
 ---
 
+# Iteration 3 — Verification Engine ToolRunner Adoption Completion
+
+## Problem
+
+`SecurityScanner` and `BenchmarkRunner` each duplicated subprocess
+execution logic (`subprocess.run`) instead of delegating to the shared
+`ToolRunner` abstraction. This was the last remaining duplication in the
+Verification Engine and the only thing blocking the Phase 1 criterion that
+`subprocess.run` should appear only in `tool_runner.py`.
+
+## Root Cause
+
+The V1→V2 recovery left these two verification steps with their own
+subprocess invocation paths, identical in shape to the steps consolidated in
+Iteration 2. `SecurityScanner` additionally lacked the `module_fallback`
+mechanism, causing `FileNotFoundError` when the `bandit` CLI binary was
+absent from PATH even though the module was importable via `python -m`.
+
+## Fix
+
+- Refactored `SecurityScanner` to delegate execution through `ToolRunner`
+  (`module_fallback="bandit"`).
+- Refactored `BenchmarkRunner` to delegate execution through `ToolRunner`
+  (`module_fallback="pytest"`).
+- Injected `tool_runner: ToolRunner = field(default_factory=ToolRunner)` into
+  each dataclass, mirroring the pattern established in Iterations 1 and 2.
+- Removed direct `subprocess`/`time` imports from the two modules.
+
+## Tests
+
+### Passed
+
+```text
+python -m compileall core tests
+
+✅ Passed
+
+pytest tests/unit/verification_engine/test_security.py \
+       tests/unit/verification_engine/test_benchmark.py -v
+
+✅ 4 passed
+
+pytest tests/unit/verification_engine -x -vv
+
+✅ 20 passed
+
+The full Verification Engine unit suite is now green end to end. The
+`test_engine_run` failure that previously stopped in `security.py` is
+resolved.
+```
+
+### Architecture Validation
+
+`Get-ChildItem core\verification_engine\*.py | Select-String "subprocess.run"`
+returns hits only in `tool_runner.py`, satisfying the Phase 1 checklist
+criterion.
+
+## Remaining Issues
+
+- MCP `trace_path` caller/callee relationship remains inconsistent with
+  source (carried forward as TD-001).
+- Repository documentation layout inconsistency (carried forward as TD-002).
+- The Execution Engine regression (`generated.py` not created) remains, as
+  tracked in the Verification Engine V2 Recovery Checklist. This is out of
+  Verification Engine scope and untouched this iteration.
+
+## Confidence
+
+High
+
+ToolRunner adoption is now complete across all subprocess-owning
+Verification Engine steps (`TestRunner`, `Linter`, `Formatter`,
+`CoverageRunner`, `SecurityScanner`, `BenchmarkRunner`). The iteration
+achieved its objectives within the approved recovery scope and, as a side
+benefit, resolved the two previously-failing security unit tests via the
+`module_fallback` mechanism.
+
+---
+
 # Iteration 2 — Verification Engine Tool Execution Consolidation
 
 ## Problem
