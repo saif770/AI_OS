@@ -1,0 +1,11 @@
+[
+    {
+        "id": "TASK-0002",
+        "title": "Review project architecture",
+        "priority": "High",
+        "status": "Todo",
+        "estimated_hours": 2,
+        "dependencies": [],
+        "tags": []
+    }
+]

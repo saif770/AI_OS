@@ -1,6 +1,6 @@
 # Project Intelligence Report
 
-Generated: 2026-07-01T22:56:27.594307
+Generated: 2026-07-02T15:45:25.215721
 
 ## Project
 
@@ -10,9 +10,9 @@ Generated: 2026-07-01T22:56:27.594307
 ## Language
 
 - **primary_language**: Python
-- **total_source_files**: 30
-- **languages**: {'Markdown': 1, 'Python': 29}
-- **percentages**: {'Markdown': 3.33, 'Python': 96.67}
+- **total_source_files**: 50
+- **languages**: {'Markdown': 1, 'Python': 49}
+- **percentages**: {'Markdown': 2.0, 'Python': 98.0}
 
 ## Framework
 
@@ -36,33 +36,33 @@ Generated: 2026-07-01T22:56:27.594307
 
 ## Metrics
 
-- **directories**: 6
-- **files**: 36
-- **python_files**: 29
-- **lines_of_code**: 3424
-- **blank_lines**: 1091
-- **comment_lines**: 129
-- **classes**: 30
-- **functions**: 97
-- **imports**: 131
-- **test_files**: 0
+- **directories**: 10
+- **files**: 55
+- **python_files**: 49
+- **lines_of_code**: 4603
+- **blank_lines**: 1428
+- **comment_lines**: 152
+- **classes**: 47
+- **functions**: 140
+- **imports**: 191
+- **test_files**: 6
 - **documentation_files**: 1
 - **largest_file**: core\project_intelligence\dependency_analyzer.py
 - **largest_file_lines**: 210
-- **total_size_bytes**: 76023
-- **code_lines**: 2204
+- **total_size_bytes**: 102703
+- **code_lines**: 3023
 
 ## Git
 
 - **git_installed**: True
-- **repository**: False
-- **branch**: None
-- **remote**: None
-- **latest_commit**: None
-- **latest_commit_hash**: None
-- **commit_count**: 0
-- **tags**: []
-- **status**: []
+- **repository**: True
+- **branch**: main
+- **remote**: https://github.com/saif770/AI_OS.git
+- **latest_commit**: Planning Engine v1 completed
+- **latest_commit_hash**: 39f4ee018ab3a657ec469456386a26f3c3fedc4b
+- **commit_count**: 2
+- **tags**: ['v0.1.0', 'v0.2.0']
+- **status**: ['M .bootstrap/PROJECT_CONTEXT.md', ' M .bootstrap/PROJECT_OVERVIEW.json', ' M .bootstrap/report.json', ' M bootstrap.py', ' M bootstrap/__init__.py', ' M bootstrap/__pycache__/__init__.cpython-313.pyc', ' D tests', '?? .bootstrap/PLAN.md', '?? .bootstrap/RISKS.md', '?? .bootstrap/ROADMAP.md', '?? .bootstrap/TASKS.json', '?? __pycache__/', '?? bootstrap/__pycache__/engine.cpython-313.pyc', '?? bootstrap/engine.py', '?? core/__init__.py', '?? core/__pycache__/', '?? test_planning.py']
 
 ## Architecture
 
