@@ -2,6 +2,116 @@
 
 ---
 
+# Repository Stabilization — Test Collection Recovery
+
+## Problem
+
+The repository failed during pytest collection with
+`ImportMismatchError`. Three test modules in
+`tests/unit/verification_engine/` shared identical basenames with modules in
+`tests/unit/execution_engine/`:
+
+- `test_engine.py`
+- `test_models.py`
+- `test_report.py`
+
+Because neither unit test subpackage contained a valid `__init__.py`
+(both had a misnamed `init.py` lacking the dunder prefix), pytest fell back
+to rootdir-based import mode, importing both files under the same bare
+module name and raising `ImportMismatchError`.
+
+## Root Cause
+
+Two compounding defects:
+
+1. **Colliding basenames**: the three verification test files had the same
+   basename as their execution-engine counterparts.
+2. **Invalid package markers**: `tests/unit/verification_engine/init.py` and
+   `tests/unit/execution_engine/init.py` were named `init.py` instead of
+   `__init__.py`, so Python did not recognize them as package markers.
+   Additionally, the verification-engine `init.py` contained a stale copy of
+   the production package exports (`from .engine import VerificationEngine`),
+   which would fail once recognized as a package.
+
+## Fix
+
+Stabilization-only pass (no production code touched):
+
+- Renamed the three colliding verification test files to unique names:
+  - `test_engine.py` → `test_verification_engine.py`
+  - `test_models.py` → `test_verification_models.py`
+  - `test_report.py` → `test_verification_report.py`
+- Renamed `init.py` → `__init__.py` in both unit test subpackages.
+- Replaced the stale production-export content in the verification-engine
+  `__init__.py` with a minimal package marker (matching the
+  execution-engine package marker).
+- Cleared stale `__pycache__` / `.pyc` artifacts.
+
+All renames performed via `git mv` to preserve history. No imports required
+updating (the test modules are not imported by name elsewhere).
+
+## Tests
+
+### Passed
+
+```text
+python -m compileall core tests
+
+✅ Passed
+
+pytest tests/unit --co -q
+
+✅ 43 tests collected, 0 errors (ImportMismatchError resolved)
+
+pytest tests/unit -x -vv
+
+✅ 43 passed
+
+pytest tests/integration -v
+
+✅ 6 passed
+
+pytest -v
+
+47 passed, 2 failed (see Remaining Failures)
+```
+
+## Remaining Failures (reported, NOT fixed per task instructions)
+
+Two failures surfaced in the full `pytest -v` run:
+
+- `tests/integration/test_end_to_end.py::test_ai_os_end_to_end`
+- `tests/integration/test_planning_engine.py::test_planning_engine_runs`
+
+Both fail with `FileNotFoundError: [WinError 3] The system cannot find the
+path specified: 'G:\\'`, raised from pytest's cache provider attempting to
+write `.pytest_cache` at the G: drive root. These are environment /
+infrastructure artifacts, not genuine test-logic failures: both tests
+**pass** when run via `tests/integration -v` in isolation. They are
+unrelated to the test-file renames and were not introduced by this
+stabilization pass. Per task instructions, they are reported but not fixed.
+
+## Files Changed
+
+- `tests/unit/verification_engine/test_engine.py` → `test_verification_engine.py` (rename)
+- `tests/unit/verification_engine/test_models.py` → `test_verification_models.py` (rename)
+- `tests/unit/verification_engine/test_report.py` → `test_verification_report.py` (rename)
+- `tests/unit/verification_engine/init.py` → `__init__.py` (rename + content fix)
+- `tests/unit/execution_engine/init.py` → `__init__.py` (rename)
+
+(5 stabilization files; no production code modified.)
+
+## Confidence
+
+High
+
+The `ImportMismatchError` is fully resolved and pytest collection succeeds
+repository-wide. No production code was touched. The two remaining failures
+are pre-existing environment artifacts on the G: drive, reported per the
+stop condition.
+
+---
+
 # Execution Engine Recovery Iteration 1 — Restore generated.py Output
 
 ## Problem
