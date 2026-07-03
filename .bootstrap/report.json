@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-07-03T21:35:36.999553",
+    "generated_at": "2026-07-03T23:24:11.953789",
     "project": "AI-OS",
     "version": "1.0.0",
     "summary": {
@@ -15,8 +15,8 @@
         {
             "stage": "Environment",
             "status": "SUCCESS",
-            "started_at": "2026-07-03T21:35:29.688348",
-            "finished_at": "2026-07-03T21:35:29.688552",
+            "started_at": "2026-07-03T23:24:04.288025",
+            "finished_at": "2026-07-03T23:24:04.288155",
             "duration": 0.0,
             "warnings": [],
             "errors": [],
@@ -37,9 +37,9 @@
         {
             "stage": "Structure",
             "status": "SUCCESS",
-            "started_at": "2026-07-03T21:35:29.688631",
-            "finished_at": "2026-07-03T21:35:29.708961",
-            "duration": 0.02,
+            "started_at": "2026-07-03T23:24:04.288210",
+            "finished_at": "2026-07-03T23:24:04.313098",
+            "duration": 0.025,
             "warnings": [],
             "errors": [],
             "data": {
@@ -70,9 +70,9 @@
         {
             "stage": "Dependencies",
             "status": "SUCCESS",
-            "started_at": "2026-07-03T21:35:29.709028",
-            "finished_at": "2026-07-03T21:35:30.800153",
-            "duration": 1.091,
+            "started_at": "2026-07-03T23:24:04.313167",
+            "finished_at": "2026-07-03T23:24:05.603208",
+            "duration": 1.29,
             "warnings": [],
             "errors": [],
             "data": {
@@ -88,9 +88,9 @@
         {
             "stage": "Git Setup",
             "status": "SUCCESS",
-            "started_at": "2026-07-03T21:35:30.800224",
-            "finished_at": "2026-07-03T21:35:31.187261",
-            "duration": 0.387,
+            "started_at": "2026-07-03T23:24:05.603284",
+            "finished_at": "2026-07-03T23:24:06.068960",
+            "duration": 0.466,
             "warnings": [],
             "errors": [],
             "data": {
@@ -105,9 +105,9 @@
         {
             "stage": "Verification",
             "status": "SUCCESS",
-            "started_at": "2026-07-03T21:35:31.187337",
-            "finished_at": "2026-07-03T21:35:31.206191",
-            "duration": 0.019,
+            "started_at": "2026-07-03T23:24:06.069027",
+            "finished_at": "2026-07-03T23:24:06.092236",
+            "duration": 0.023,
             "warnings": [],
             "errors": [],
             "data": {
@@ -125,9 +125,9 @@
         {
             "stage": "MCP Setup",
             "status": "SUCCESS",
-            "started_at": "2026-07-03T21:35:31.206271",
-            "finished_at": "2026-07-03T21:35:31.510311",
-            "duration": 0.304,
+            "started_at": "2026-07-03T23:24:06.092309",
+            "finished_at": "2026-07-03T23:24:06.299865",
+            "duration": 0.208,
             "warnings": [],
             "errors": [],
             "data": {
@@ -148,17 +148,17 @@
         {
             "stage": "Project Scan",
             "status": "SUCCESS",
-            "started_at": "2026-07-03T21:35:31.510847",
-            "finished_at": "2026-07-03T21:35:36.988376",
-            "duration": 5.478,
+            "started_at": "2026-07-03T23:24:06.299936",
+            "finished_at": "2026-07-03T23:24:11.940646",
+            "duration": 5.641,
             "warnings": [],
             "errors": [],
             "data": {
                 "project_root": "G:\\My Drive\\AI_OS\\AI-OS",
                 "directory_count": 33,
-                "file_count": 171,
-                "python_file_count": 156,
-                "total_size_bytes": 268716,
+                "file_count": 177,
+                "python_file_count": 162,
+                "total_size_bytes": 288629,
                 "directories": [
                     ".kilo",
                     "New folder",
@@ -311,8 +311,14 @@
                     "tests\\integration\\test_bootstrap.py",
                     "tests\\integration\\test_end_to_end.py",
                     "tests\\integration\\test_execution_engine.py",
+                    "tests\\integration\\test_full_pipeline.py",
+                    "tests\\integration\\test_improvement_loop.py",
+                    "tests\\integration\\test_memory_system.py",
+                    "tests\\integration\\test_orchestrator.py",
                     "tests\\integration\\test_planning_engine.py",
                     "tests\\integration\\test_project_intelligence.py",
+                    "tests\\integration\\test_reflection_engine.py",
+                    "tests\\integration\\test_runtime.py",
                     "tests\\integration\\test_verification_engine.py",
                     "tests\\unit\\conftest.py",
                     "tests\\unit\\execution_engine\\__init__.py",
@@ -469,8 +475,14 @@
                     "tests\\integration\\test_bootstrap.py",
                     "tests\\integration\\test_end_to_end.py",
                     "tests\\integration\\test_execution_engine.py",
+                    "tests\\integration\\test_full_pipeline.py",
+                    "tests\\integration\\test_improvement_loop.py",
+                    "tests\\integration\\test_memory_system.py",
+                    "tests\\integration\\test_orchestrator.py",
                     "tests\\integration\\test_planning_engine.py",
                     "tests\\integration\\test_project_intelligence.py",
+                    "tests\\integration\\test_reflection_engine.py",
+                    "tests\\integration\\test_runtime.py",
                     "tests\\integration\\test_verification_engine.py",
                     "tests\\unit\\conftest.py",
                     "tests\\unit\\execution_engine\\__init__.py",
@@ -530,9 +542,9 @@
         {
             "stage": "AI Readiness",
             "status": "SUCCESS",
-            "started_at": "2026-07-03T21:35:36.988449",
-            "finished_at": "2026-07-03T21:35:36.997682",
-            "duration": 0.009,
+            "started_at": "2026-07-03T23:24:11.940734",
+            "finished_at": "2026-07-03T23:24:11.949230",
+            "duration": 0.008,
             "warnings": [],
             "errors": [],
             "data": {
@@ -549,7 +561,7 @@
                     "docs"
                 ],
                 "missing_items": [],
-                "python_files": 156,
+                "python_files": 162,
                 "git_available": true,
                 "mcp_available": true
             }

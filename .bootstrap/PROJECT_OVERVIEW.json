@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-07-03T21:35:29.635677",
+    "generated_at": "2026-07-03T23:24:04.081672",
     "project": "AI-OS",
     "root": "G:\\My Drive\\AI_OS\\AI-OS",
     "intelligence": {
@@ -9,16 +9,16 @@
         },
         "language": {
             "primary_language": "Python",
-            "total_source_files": 164,
+            "total_source_files": 170,
             "languages": {
                 "Markdown": 6,
-                "Python": 156,
+                "Python": 162,
                 "JSON": 2
             },
             "percentages": {
-                "Markdown": 3.66,
-                "Python": 95.12,
-                "JSON": 1.22
+                "Markdown": 3.53,
+                "Python": 95.29,
+                "JSON": 1.18
             }
         },
         "framework": {
@@ -99,30 +99,31 @@
         },
         "metrics": {
             "directories": 33,
-            "files": 171,
-            "python_files": 156,
-            "lines_of_code": 10317,
-            "blank_lines": 2968,
+            "files": 177,
+            "python_files": 162,
+            "lines_of_code": 11279,
+            "blank_lines": 3232,
             "comment_lines": 158,
             "classes": 117,
-            "functions": 384,
-            "imports": 537,
-            "test_files": 55,
+            "functions": 439,
+            "imports": 555,
+            "test_files": 61,
             "documentation_files": 6,
-            "largest_file": "core\\project_intelligence\\dependency_analyzer.py",
-            "largest_file_lines": 211,
-            "total_size_bytes": 268716,
-            "code_lines": 7191
+            "largest_file": "tests\\integration\\test_full_pipeline.py",
+            "largest_file_lines": 294,
+            "total_size_bytes": 288629,
+            "code_lines": 7889
         },
         "git": {
             "git_installed": true,
             "repository": true,
             "branch": "main",
             "remote": "https://github.com/saif770/AI_OS.git",
-            "latest_commit": "feat(orchestrator): add Orchestrator V1",
-            "latest_commit_hash": "8aff3f4ebba8402a1cd976541e5398f118169e58",
-            "commit_count": 15,
+            "latest_commit": "feat(runtime): implement Runtime Engine V1",
+            "latest_commit_hash": "6e79660f3a22c7599e303d7ba91c8ca0553a5047",
+            "commit_count": 16,
             "tags": [
+                "ai-os-core-v1.0",
                 "improvement-v1",
                 "memory-v1",
                 "orchestrator-v1",
@@ -137,8 +138,12 @@
                 "M .bootstrap/PROJECT_CONTEXT.md",
                 " M .bootstrap/PROJECT_OVERVIEW.json",
                 " M .bootstrap/report.json",
-                "?? core/runtime/",
-                "?? tests/unit/runtime/"
+                "?? tests/integration/test_full_pipeline.py",
+                "?? tests/integration/test_improvement_loop.py",
+                "?? tests/integration/test_memory_system.py",
+                "?? tests/integration/test_orchestrator.py",
+                "?? tests/integration/test_reflection_engine.py",
+                "?? tests/integration/test_runtime.py"
             ]
         },
         "architecture": {
