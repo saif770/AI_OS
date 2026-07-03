@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-07-03T21:16:10.571204",
+    "generated_at": "2026-07-03T21:35:29.635677",
     "project": "AI-OS",
     "root": "G:\\My Drive\\AI_OS\\AI-OS",
     "intelligence": {
@@ -9,16 +9,16 @@
         },
         "language": {
             "primary_language": "Python",
-            "total_source_files": 154,
+            "total_source_files": 164,
             "languages": {
                 "Markdown": 6,
-                "Python": 146,
+                "Python": 156,
                 "JSON": 2
             },
             "percentages": {
-                "Markdown": 3.9,
-                "Python": 94.81,
-                "JSON": 1.3
+                "Markdown": 3.66,
+                "Python": 95.12,
+                "JSON": 1.22
             }
         },
         "framework": {
@@ -98,33 +98,34 @@
             "count": 58
         },
         "metrics": {
-            "directories": 30,
-            "files": 161,
-            "python_files": 146,
-            "lines_of_code": 9526,
-            "blank_lines": 2750,
-            "comment_lines": 157,
-            "classes": 112,
-            "functions": 349,
-            "imports": 504,
-            "test_files": 51,
+            "directories": 33,
+            "files": 171,
+            "python_files": 156,
+            "lines_of_code": 10317,
+            "blank_lines": 2968,
+            "comment_lines": 158,
+            "classes": 117,
+            "functions": 384,
+            "imports": 537,
+            "test_files": 55,
             "documentation_files": 6,
             "largest_file": "core\\project_intelligence\\dependency_analyzer.py",
             "largest_file_lines": 211,
-            "total_size_bytes": 252500,
-            "code_lines": 6619
+            "total_size_bytes": 268716,
+            "code_lines": 7191
         },
         "git": {
             "git_installed": true,
             "repository": true,
             "branch": "main",
             "remote": "https://github.com/saif770/AI_OS.git",
-            "latest_commit": "feat(memory): complete Memory System V1",
-            "latest_commit_hash": "82886402b9b50530866681d6d7f159a305e81906",
-            "commit_count": 14,
+            "latest_commit": "feat(orchestrator): add Orchestrator V1",
+            "latest_commit_hash": "8aff3f4ebba8402a1cd976541e5398f118169e58",
+            "commit_count": 15,
             "tags": [
                 "improvement-v1",
                 "memory-v1",
+                "orchestrator-v1",
                 "reflection-v1",
                 "v0.1.0",
                 "v0.2.0",
@@ -136,8 +137,8 @@
                 "M .bootstrap/PROJECT_CONTEXT.md",
                 " M .bootstrap/PROJECT_OVERVIEW.json",
                 " M .bootstrap/report.json",
-                "?? core/orchestrator/",
-                "?? tests/unit/orchestrator/"
+                "?? core/runtime/",
+                "?? tests/unit/runtime/"
             ]
         },
         "architecture": {
