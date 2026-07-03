@@ -1,6 +1,6 @@
 # Project Intelligence Report
 
-Generated: 2026-07-03T19:04:44.888434
+Generated: 2026-07-03T19:21:43.259566
 
 ## Project
 
@@ -10,9 +10,9 @@ Generated: 2026-07-03T19:04:44.888434
 ## Language
 
 - **primary_language**: Python
-- **total_source_files**: 121
-- **languages**: {'Markdown': 6, 'Python': 113, 'JSON': 2}
-- **percentages**: {'Markdown': 4.96, 'Python': 93.39, 'JSON': 1.65}
+- **total_source_files**: 133
+- **languages**: {'Markdown': 6, 'Python': 125, 'JSON': 2}
+- **percentages**: {'Markdown': 4.51, 'Python': 93.98, 'JSON': 1.5}
 
 ## Framework
 
@@ -36,21 +36,21 @@ Generated: 2026-07-03T19:04:44.888434
 
 ## Metrics
 
-- **directories**: 21
-- **files**: 128
-- **python_files**: 113
-- **lines_of_code**: 7461
-- **blank_lines**: 2224
+- **directories**: 24
+- **files**: 140
+- **python_files**: 125
+- **lines_of_code**: 7594
+- **blank_lines**: 2238
 - **comment_lines**: 152
-- **classes**: 92
-- **functions**: 250
-- **imports**: 408
-- **test_files**: 37
+- **classes**: 99
+- **functions**: 263
+- **imports**: 431
+- **test_files**: 42
 - **documentation_files**: 6
 - **largest_file**: core\project_intelligence\dependency_analyzer.py
 - **largest_file_lines**: 211
-- **total_size_bytes**: 207708
-- **code_lines**: 5085
+- **total_size_bytes**: 212481
+- **code_lines**: 5204
 
 ## Git
 
@@ -58,11 +58,11 @@ Generated: 2026-07-03T19:04:44.888434
 - **repository**: True
 - **branch**: main
 - **remote**: https://github.com/saif770/AI_OS.git
-- **latest_commit**: Docs: finalize AI_OS recovery documentation
-- **latest_commit_hash**: a5dbf2700a6070d09378c954029923cd93a83173
-- **commit_count**: 11
-- **tags**: ['v0.1.0', 'v0.2.0', 'v0.3.0', 'v1.0.0', 'verification-v2-complete']
-- **status**: ['M .bootstrap/PROJECT_CONTEXT.md', ' M .bootstrap/PROJECT_OVERVIEW.json', ' M .bootstrap/TASKS.json', ' M .bootstrap/report.json', ' D docs', '?? .kilo/', '?? core/reflection_engine/', '?? tests/unit/reflection_engine/']
+- **latest_commit**: feat(reflection): complete Reflection Engine Phase 2
+- **latest_commit_hash**: db288d19840e5bbd40759402d5eff209fe593b8f
+- **commit_count**: 12
+- **tags**: ['reflection-v1', 'v0.1.0', 'v0.2.0', 'v0.3.0', 'v1.0.0', 'verification-v2-complete']
+- **status**: ['M .bootstrap/PROJECT_CONTEXT.md', ' M .bootstrap/PROJECT_OVERVIEW.json', ' M .bootstrap/report.json', '?? core/improvement_loop/', '?? tests/unit/improvement_loop/']
 
 ## Architecture
 
